@@ -41,9 +41,12 @@ function startTimer() {
 function displayBars(barNumber) {
     barraContainer.innerHTML = ''; // Limpiar contenedor
 
-    const separations = [100, 200, 300, 400, 500, 600, 700, 800, 900]; // Distancia horizontal entre las barras
-    const height = [100, 150, 200, 250, 300, 350, 400, 500, 600]; // Altura de las barras
-    
+    let separations = [50, 100, 150, 200, 250, 300, 350, 400, 450]; // Distancia horizontal entre las barras
+    let height = [60, 100, 140, 180, 220, 260, 300, 340, 380]; // Altura de las barras
+    if (window.innerWidth <= 700) {
+        separations = [50, 100, 150, 200, 250, 300, 350, 400, 450]; // Reducir separaciones en dispositivos móviles
+        height = [50, 75, 100, 125, 150, 175, 200, 225, 250]; // Reducir alturas en dispositivos móviles
+    }
     // Crear barra izquierda
     const leftBar = document.createElement('div');
     leftBar.classList.add('barra');
